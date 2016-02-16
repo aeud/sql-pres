@@ -148,13 +148,34 @@
             </section>
             <section>
                 <section data-background="#fff">
-                    <h2>Query sample</h2>
-<pre><code class="sql">-- Select some data
-select o.order_id "Order ID" ,count(distinct i.id) "Quantity" from orders o inner join items i on o.order_id = i.order_id where o.delivered_at is not null and not i.is_sample group by o.order_id order by 1 desc limit 100;</code></pre>
+                    <h2>Setup an environment</h2>
+                </section>
+                <section data-background="#fff">
+                    <h2>A server</h2>
+                    <img src="https://www.dropbox.com/s/cyghuwpfisbezxd/Screenshot%202016-02-16%2010.19.22.png?dl=1" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>From your laptop!</h2>
+                    <img src="https://www.dropbox.com/s/4ktnletrhl851xt/Screenshot%202016-02-16%2010.20.09.png?dl=1" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>Or in the cloud</h2>
+                    <img src="https://www.dropbox.com/s/w6e76tr2piwv563/Screenshot%202016-02-16%2010.22.04.png?dl=1" alt="">
+                    <p><a href="https://c9.io/">Cloud9</a></p>
+                </section>
+            </section>
+            <section>
+                <section data-background="#fff">
+                    <h2>First interactions</h2>
                 </section>
                 <section data-background="#fff">
                     <h2>Query sample</h2>
-<pre><code class="sql">-- Select some data
+<pre><code class="sql">-- Sample query
+select o.order_id "Order ID" ,count(distinct i.id) "Quantity" from orders o inner join items i on o.order_id = i.order_id where o.delivered_at is not null and not i.is_sample group by o.order_id order by 1 desc limit 100;</code></pre>
+                </section>
+                <section data-background="#fff">
+                    <h2>Please, indent</h2>
+<pre><code class="sql">-- Indented sample query
 SELECT
     o.order_id           AS "Order ID"
   , COUNT(DISTINCT i.id) AS "Quantity"
@@ -169,6 +190,7 @@ GROUP BY
     o.order_id
 ORDER BY o.created_at DESC
 LIMIT 100;</code></pre>
+                    <p><i>Not only for you, for everyone!</i></p>
                 </section>
             </section>
         </div>
