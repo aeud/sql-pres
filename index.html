@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="AERO is a sofware, designed and developed by Sephora, to help our team to work together on the marketing campaigns.">
+    <title>Intro to SQL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/theme/black.min.css" id="theme">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/monokai-sublime.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,900italic,700italic,700,500italic,500,400italic,900,300italic,300,100italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6, li {
+            font-family: 'Roboto', sans-serif;
+        }
+        h2 i.material-icons,
+        h2 i.fa {
+            font-size: 400px;
+        }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+            font-family: 'Roboto', sans-serif;
+
+        }
+        .reveal section img {
+            border: none;
+            box-shadow: none;
+            max-width: 90%;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section data-background="#fff">
+                    <h2>Intro to SQL</h2>
+                </section>
+            </section>
+            <section>
+                <section data-background="#fff">
+                    <h2>Database</h2>
+                    <p>A set of <i>related</i> information.</p>
+                </section>
+                <section data-background="images/yellow-pages.jpg"></section>
+                <section data-background="#fff">
+                    <h2>Phone books: a database?</h2>
+                    <ul>
+                        <li>It contains formated information</li>
+                        <li>Information is indexed</li>
+                        <li>It's possible to find a piece of information (phone number, address) from a name</li>
+                    </ul>
+                </section>
+                <section data-background="#fff">
+                    <h2>Phone book: a bad database!</h2>
+                    <ul>
+                        <li>Time consuming: it contains a large number of entries</li>
+                        <li>Indexed by last/first names</li>
+                        <li>Once it's printed, there is no more updates</li>
+                    </ul>
+                </section>
+                <section data-background="#fff">
+                    <h2>Hierarchical database system</h2>
+                    <img src="https://www.dropbox.com/s/8qmmi9xfhdevyxh/Screenshot%202016-02-15%2010.21.51.png?dl=1" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>Network database system</h2>
+                    <img src="https://www.dropbox.com/s/t1ii1vqwaagm892/Screenshot%202016-02-15%2010.23.34.png?dl=1" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>Relational model</h2>
+                    <img src="images/relational-model.png" alt="">
+                </section>
+            </section>
+            <section>
+                <section data-background="#fff">
+                    <h2>Terminology</h2>
+                </section>
+                <section data-background="#fff">
+                    <h2>Entity</h2>
+                    <p>Something of interest to the database user community. Examples include customers, parts, geographic locations, etc.</p>        
+                </section>
+                <section data-background="#fff">
+                    <h2>Column</h2>
+                    <p>An individual piece of data stored in a table.</p>        
+                </section>
+                <section data-background="#fff">
+                    <h2>Row</h2>
+                    <p>A set of columns that together completely describe an entity or some action on an entity. Also called a record or a tuple.</p>        
+                </section>
+                <section data-background="#fff">
+                    <h2>Table</h2>
+                    <p>A set of rows, held either in memory (nonpersistent) or on permanent storage (persistent).</p>        
+                </section>
+                <section data-background="#fff">
+                    <img src="images/relational-model-terminology.png" alt="">      
+                </section>
+                <section data-background="#fff">
+                    <h2>Result set</h2>
+                    <p>Another name for a nonpersistent table, generally the result of an SQL query.</p>        
+                </section>
+                <section data-background="#fff">
+                    <h2>Primary key</h2>
+                    <p>One or more columns that can be used as a unique identifier for each row in a table.</p>        
+                </section>
+                <section data-background="#fff">
+                    <h2>Foreign key</h2>
+                    <p>One or more columns that can be used together to identify a single row in another table.</p>        
+                </section>
+                <section data-background="#fff">
+                    <img src="images/relational-model-terminology-2.png" alt="">      
+                </section>
+                <section data-background="#fff">
+                    <h2>Why not using first/last names as Primary Key?</h2>
+                </section>
+            </section>
+            <section>
+                <section data-background="#fff">
+                    <h2>SQL</h2>
+                    <ul>
+                        <li>Chamberlin and Boyce (IBM) in the early 1970s</li>
+                        <li>Initialy called SEQUEL</li>
+                    </ul>
+                </section>
+                <section data-background="#fff">
+                    <h2>SQL statements</h2>
+                    <ul>
+                        <li><b>Schema statement</b> to define the data structures stored in the database</li>
+                        <li><b>Data statement</b> to manipulate the data</li>
+                        <li><b>Transaction statement</b> to begin, end, and roll back transactions</li>
+                    </ul>
+                </section>
+                <section data-background="#fff">
+                    <h2>A progamming language</h2>
+                    <ul>
+                        <li>Nonprocedural</li>
+                        <li>Dependant to other environments</li>
+                    </ul>
+                </section>
+                <section data-background="#fff">
+                    <img src="https://www.dropbox.com/s/l0md1n3tryepkzq/Screenshot%202016-02-15%2011.26.58.png?dl=1" alt="">
+                </section>
+            </section>
+            <section>
+                <section data-background="#fff">
+                    <h2>Query sample</h2>
+<pre><code class="sql">-- Select some data
+select o.order_id "Order ID" ,count(distinct i.id) "Quantity" from orders o inner join items i on o.order_id = i.order_id where o.delivered_at is not null and not i.is_sample group by o.order_id order by 1 desc limit 100;</code></pre>
+                </section>
+                <section data-background="#fff">
+                    <h2>Query sample</h2>
+<pre><code class="sql">-- Select some data
+SELECT
+    o.order_id           AS "Order ID"
+  , COUNT(DISTINCT i.id) AS "Quantity"
+FROM
+    orders o
+INNER JOIN
+    items i
+        ON o.order_id = i.order_id
+WHERE
+    o.delivered_at IS NOT NULL AND NOT i.is_sample
+GROUP BY
+    o.order_id
+ORDER BY o.created_at DESC
+LIMIT 100;</code></pre>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/js/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'slide',
+            dependencies: [
+                { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            ]
+        });
+    </script>
+</body>
+</html>
