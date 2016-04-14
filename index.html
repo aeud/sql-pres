@@ -7,8 +7,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="description" content="AERO is a sofware, designed and developed by Sephora, to help our team to work together on the marketing campaigns.">
     <title>Intro to SQL</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/reveal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/theme/black.min.css" id="theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/css/theme/white.min.css" id="theme">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/monokai-sublime.min.css">
@@ -40,6 +40,7 @@
             <section>
                 <section data-background="#fff">
                     <h2>Intro to SQL</h2>
+                    <p class="insert email"></p>
                 </section>
             </section>
             <section>
@@ -163,22 +164,211 @@
                     <img src="https://www.dropbox.com/s/w6e76tr2piwv563/Screenshot%202016-02-16%2010.22.04.png?dl=1" alt="">
                     <p><a href="https://c9.io/">Cloud9</a></p>
                 </section>
+                <section data-background="#fff">
+                    <h2>Connect</h2>
+                    <img src="https://www.dropbox.com/s/0d9n8f5360okzln/Screenshot%202016-02-16%2010.28.22.png?dl=1" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>Create a workspace</h2>
+                    <img src="https://www.dropbox.com/s/owc2hoau5ac2xkc/Screenshot%202016-02-16%2010.29.17.png?dl=1" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>Setup PostgreSQL</h2>
+                    <p>Copy this code in the console</p>
+<pre><code>$ sudo service postgresql start
+$ sudo sudo -u postgres psql
+</code></pre>
+                </section>
+                <section data-background="#fff">
+                    <h2>First interaction</h2>
+                    <img src="https://www.dropbox.com/s/zcjtygux3l05ul1/Screenshot%202016-02-16%2014.34.49.png?dl=1" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>Try it!</h2>
+<pre><code class="sql">-- Get the current date
+SELECT CURRENT_DATE;
+/**
+ *     date    
+ * ------------
+ *  2016-02-16
+ * (1 row)
+ */
+</code></pre>
+                </section>
             </section>
             <section>
                 <section data-background="#fff">
-                    <h2>First interactions</h2>
+                    <h2>The types</h2>
+                    <img src="http://fullyfeline.com/wp-content/uploads/2013/03/cats-and-dogs-group.jpg" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>One rule</h2>
+                    <p>All the values of a column have to be of the same type</p>
+                </section>
+                <section data-background="#fff">
+                    <h2>Types, types, types</h2>
+                    <ul>
+                        <li>boolean</li>
+                        <li>character varying [ (n) ]</li>
+                        <li>text</li>
+                        <li>date</li>
+                        <li>integer</li>
+                        <li>double precision</li>
+                        <li>...</li>
+                    </ul>
+                    <p><a href="http://www.postgresql.org/docs/9.4/static/datatype.html">PostgreSQL data types</a></p>
+                </section>
+            </section>
+            <section>
+                <section data-background="#fff">
+                    <h2>Let's be practical</h2>
+                    <img src="images/kitchen-tools.jpg" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>We need the furnitures</h2>
+                    <img src="images/ikea.jpg" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>That's what I'm looking for</h2>
+                    <img src="images/ikea-kitchen-1.jpg" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>Or that..</h2>
+                    <img src="images/ikea-kitchen-2.jpg" alt="">
+                </section>
+                <section data-background="#fff">
+                    <h2>The shape doesn't matter</h2>
+                    <img src="images/ikea-kitchen-3.jpg" alt="">
+                </section>
+                <section>
+                    <h2>Chossing your kitchen is choosing your database</h2>
+                </section>
+                <section>
+                    <h2>Then we have to choose the storage</h2>
+                    <img src="images/ikea-storage.jpg" alt="">
+                </section>
+                <section>
+                    <h2>These drawers are your <i>tables</i></h2>
+                </section>
+                <section>
+                    <h2>Finally let's organise our drawer</h2>
+                    <img src="images/ikea-column.jpg" alt="">
+                </section>
+                <section>
+                    <h2>Summary</h2>
+                    <img src="images/summary.jpg" alt="">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Please meet Sheets</h2>
+                    <img src="images/sheets-1.png" alt="">
+                </section>
+                <section>
+                    <p>I want to store some information about the students og GA</p>
+                </section>
+                <section>
+                    <h2>I create my first table <i>Student</i></h2>
+                    <img src="images/sheets-table.png" alt="">
+                </section>
+                <section>
+                    <h2>How do I describe a student?</h2>
+                </section>
+                <section>
+                    <h2>How do I describe a student?</h2>
+                    <ul>
+                        <li>First name</li>
+                        <li>Last name</li>
+                        <li>Email</li>
+                        <li>Age</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>I create my first table <i>Student</i></h2>
+                    <img src="images/sheets-columns.png" alt="">
+                </section>
+                <section>
+                    <h2>Now we can insert some rows</h2>
+                    <img src="images/sheets-rows.png" alt="">
+                </section>
+                <section>
+                    <h2>Let's integrate the cities</h2>
+                    <img src="images/sheets-table3.png" alt="">
+                </section>
+                <section>
+                    <h2>Let's integrate the classes</h2>
+                    <img src="images/sheets-table2.png" alt="">
+                </section>
+                <section>
+                    <h2>How to link Students and Cities?</h2>
+                    <img src="images/Ideas - 17.png" alt="">
+                </section>
+                <section>
+                    <p>A <i>Student</i> has <b>only one</b> <i>City</i></p>
+                </section>
+                <section>
+                    <h2>SQL Constraint</h2>
+                    <h3>Pattern A</h3>
+                    <p>Add a <b>Foreign Key</b> in the <i>Student</i> table referring to the <i>City</i> table</p>
+                </section>
+                <section>
+                    <h2>SQL Constraint</h2>
+                    <h3>Pattern A</h3>
+                    <ol>
+                        <li>Create <b>Primary keys</b> in all the tables</li>
+                        <li>Create a <b>Foreign key</b> in the <i>Student</i> table</li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>SQL Constraint</h2>
+                    <h3>Pattern A</h3>
+                    <img src="images/sheets-pk.png" alt="">
+                </section>
+                <section>
+                    <h2>SQL Constraint</h2>
+                    <h3>Pattern A</h3>
+                    <img src="images/sheets-fk.png" alt="">
+                </section>
+                <section>
+                    <h2>How to link Students and Classes?</h2>
+                    <img src="images/Ideas - 16.png" alt="">
+                </section>
+                <section>
+                    <p>A <i>Student</i> has <b>one or many</b> <i>Classes</i></p>
+                </section>
+                <section>
+                    <h2>SQL Constraint</h2>
+                    <h3>Pattern B</h3>
+                    <p>Create a pivot table with <b>2 Foreign Keys</b> referring to <i>Student</i> table and to <i>Class</i> table</p>
+                    <p>The <b>Foreign key couple</b> is in fact the <b>Primary key</b> of this pivot table</p>
+                </section>
+                <section>
+                    <h2>SQL Constraint</h2>
+                    <h3>Pattern A</h3>
+                    <img src="images/sheets-pivot.png" alt="">
+                </section>
+                <section>
+                    <section>
+                        <h2>STOP EXCEL</h2>
+                    </section>
+                </section>
+            </section>
+            <section>
+                <section data-background="#fff">
+                    <h2>All about the queries</h2>
                 </section>
                 <section data-background="#fff">
                     <h2>Query sample</h2>
 <pre><code class="sql">-- Sample query
-select o.order_id "Order ID" ,count(distinct i.id) "Quantity" from orders o inner join items i on o.order_id = i.order_id where o.delivered_at is not null and not i.is_sample group by o.order_id order by 1 desc limit 100;</code></pre>
+select o.order_id "Order ID", count(distinct i.id) "Quantity" from orders o inner join items i on o.order_id = i.order_id where o.delivered_at is not null and not i.is_sample group by o.order_id order by 1 desc limit 100;</code></pre>
                 </section>
                 <section data-background="#fff">
                     <h2>Please, indent</h2>
 <pre><code class="sql">-- Indented sample query
 SELECT
-    o.order_id           AS "Order ID"
-  , COUNT(DISTINCT i.id) AS "Quantity"
+    o.order_id           AS "Order ID",
+    COUNT(DISTINCT i.id) AS "Quantity"
 FROM
     orders o
 INNER JOIN
@@ -190,13 +380,171 @@ GROUP BY
     o.order_id
 ORDER BY o.created_at DESC
 LIMIT 100;</code></pre>
-                    <p><i>Not only for you, for everyone!</i></p>
+                    <p><i>Not only for you, but also for everyone else!</i></p>
+                </section>
+                <section>
+                    <h2>Query 1</h2>
+                    <h3>Create a table</h3>
+<pre><code class="sql">-- Create table query
+CREATE TABLE student (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    email VARCHAR(255),
+    age INTEGER
+);</code></pre>
+                    <p><a href="http://www.postgresql.org/docs/9.1/static/sql-createtable.html" target="_blank">Documentation</a></p>
+                </section>
+                <section>
+                    <h2>Query 2</h2>
+                    <h3>Insert some columns</h3>
+<pre><code class="sql">-- Insert rows
+INSERT INTO student (
+    first_name,
+    last_name,
+    email,
+    age
+) VALUES (
+    'Leo',
+    'Di Caprio',
+    'leo@gmail.com',
+    40
+), (
+    'Angelina',
+    'Joli',
+    'angi@gmail.com',
+    42
+);</code></pre>
+                    <p><a href="http://www.postgresql.org/docs/8.2/static/sql-insert.html" target="_blank">Documentation</a></p>
+                </section>
+                <section>
+                    <h2>Query 3</h2>
+                    <h3>Retrieve your data</h3>
+<pre><code class="sql">-- Select rows
+SELECT
+    id,
+    first_name,
+    last_name
+FROM
+    student
+LIMIT 10;</code></pre>
+                    <p><a href="http://www.postgresql.org/docs/8.2/static/sql-select.html" target="_blank">Documentation</a></p>
+                </section>
+                <section>
+                    <h2>Your turn!</h2>
+                    <p>Create the tables <i>City</i> and <i>Class</i> and insert some data inside</p>
+                </section>
+                <section>
+                    <h2>Query 4</h2>
+                    <h3>See your table</h3>
+<pre><code class="sql">\d+ city</code></pre>
+                </section>
+                <section>
+                    <h2>Query 5</h2>
+                    <h3>Update a table</h3>
+<pre><code class="sql">-- Update a table
+ALTER TABLE student
+    ADD city_id INTEGER REFERENCES city(id);</code></pre>
+                    <p><a href="http://www.postgresql.org/docs/9.1/static/sql-altertable.html" target="_blank">Documentation</a></p>
+                </section>
+                <section>
+                    <h2>Query 6</h2>
+                    <h3>Update rows</h3>
+<pre><code class="sql">-- Update rows
+UPDATE
+    student -- Table name
+SET
+    city_id = 1 -- Field to update
+WHERE
+    id = 1 -- Row to update
+;</code></pre>
+                    <p><a href="http://www.postgresql.org/docs/9.1/static/sql-update.html" target="_blank">Documentation</a></p>
+                </section>
+                <section>
+                    <h2>Your turn!</h2>
+                    <p>Create the pivot table <i>student_class</i></p>
+                </section>
+                <section>
+                    <h2>Query 7</h2>
+                    <h3>Retrieve you data (bis)</h3>
+<pre><code class="sql">-- Select some data
+SELECT
+    s.first_name AS "Student first name",
+    s.last_name AS "Student last name",
+    c.name AS "City"
+FROM
+    student s
+    INNER JOIN city c ON c.id = s.city_id
+WHERE
+    c.name = 'NYC'
+ORDER BY
+    s.first_name DESC
+LIMIT 10;</code></pre>
+                    <p><a href="http://www.postgresql.org/docs/8.2/static/sql-select.html" target="_blank">Documentation</a></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Work with a bigger dataset</h2>
+                </section>
+                <section>
+                    <h2>Set up the dataset</h2>
+<pre><code>$ wget https://raw.githubusercontent.com/ankane/movielens.sql/master/movielens.sql
+$ sudo sudo -u postgres psql < movielens.sql
+</code></pre>
+                </section>
+                <section>
+                    <h2>You just created 6 tables</h2>
+                    <ul>
+                        <li><code>occupations</code></li>
+                        <li><code>users</code></li>
+                        <li><code>ratings</code></li>
+                        <li><code>movies</code></li>
+                        <li><code>genres</code></li>
+                        <li><code>genres_movies</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Relations</h2>
+                    <p>A <i>User</i> has <b>one</b> <i>Occupation</i></p>
+                    <p>A <i>Rating</i> has <b>one</b> <i>User</i> and <b>one</b> <i>Movie</i></p>
+                    <p>A <i>Movie</i> has <b>many</b> <i>Genres</i> (via <code>genre_movie</code>)</p>
+                </section>
+                <section>
+                    <h2>Fields</h2>
+<pre><code class="sql">-- PostgreSQL
+\d+ occupations
+\d+ users
+\d+ ratings
+\d+ movies
+\d+ genres
+\d+ genres_movies</code></pre>
+                </section>
+            </section>
+            <section>
+                <section data-background="#fff">
+                    <h2>Let's be practical</h2>
+                    <p>There are 4 kinds of queries</p>
+                    <ul>
+                        <li>CREATE</li>
+                        <li>SELECT</li>
+                        <li>UPDATE</li>
+                        <li>DELETE</li>
+                    </ul>
                 </section>
             </section>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.2.0/js/reveal.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+    var email = 'mailto:firstname.lastname@hostname.com';
+    email = email.replace('firstname', 'adrien');
+    email = email.replace('lastname', 'eudes');
+    email = email.replace('hostname', 'sephoradigital');
+    $('.insert.email').append($('<a>').attr('href', email).html('Adrien Eudes'))
+    </script>
     <script>
         Reveal.initialize({
             controls: true,
